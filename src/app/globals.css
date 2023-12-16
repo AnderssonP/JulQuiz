@@ -1,0 +1,283 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.header-Name{
+  color: white;
+}
+
+body {
+  background-image: url("https://cdn.pixabay.com/photo/2020/10/24/10/11/santa-sleigh-5681097_1280.jpg");
+  background-size: cover; 
+  background-position: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.name-input{
+  margin: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  max-width: 190px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 9999px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fff;
+}
+
+.button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  display: block; 
+  margin: 0 auto; 
+}
+
+.button:hover {
+  background-color: rgb(255, 209, 57);
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #000000;
+  transform: translateY(-7px);
+}
+
+.button:active {
+  transform: translateY(-1px);
+}
+
+.make-players {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.player-names{
+  text-align: center;
+  color: white;
+}
+
+.make-teams{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.make-teams:hover{
+  background-color: rgb(255, 209, 57);
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #000000;
+}
+
+
+
+.teamName {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: rgba(0, 0, 0, 0.432);
+}
+
+.teamName h2.active {
+  color: rgb(0, 0, 0);
+}
+
+
+/* Spel sida */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+.category{
+  color: white;
+}
+
+.card {
+  margin: 50px auto 0;
+  width: 150px;
+  height: 100px;
+  perspective: 1000px;
+  transition: transform 1s, width 1s, height 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  transform-origin: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card.is-expanded {
+  width: 100vw;
+  height: 100vh;
+  transform: rotateY(180deg) scale(0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  background-color: rgb(255, 57, 57);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card__face--front {
+  background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__face--front h2 {
+  color: #000000;
+  font-size: 24px;
+}
+
+.card__face--back {
+  background-color: var(--light);
+  transform: rotateY(180deg);
+}
+
+.card__content {
+  width: 100%;
+  height: 100%;
+}
+
+.card__header {
+  position: relative;
+  padding: 30px 30px 40px;
+}
+
+.card__header:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+  z-index: -1;
+  border-radius: 0px 0px 50% 0px;
+}
+
+.picture {
+  display: block;
+  width: 228px;
+  height: 228px;
+  margin: 0 auto 30px;
+  background-color: #FFF;
+  object-fit: cover;
+}
+
+.card__header h2 {
+  color: #000000;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card__body {
+  padding: 30px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.card__body h3 {
+  color: var(--dark);
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card__body p {
+  color: var(--dark);
+  font-size: 30px;
+  line-height: 1.4;
+  
+}
+.card__body p:hover {
+  color: var(--dark);
+  font-size: 35px;
+  line-height: 1.4;
+}
+
+.expand-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: var(--primary);
+  color: #FFF;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.card.question-answered {
+  opacity: 0.6; 
+  pointer-events: none; 
+}
+
+
